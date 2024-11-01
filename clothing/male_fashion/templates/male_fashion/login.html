@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	{%load static%}
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static "male_fashion/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css"%}">
+		<!-- Css Styles -->
+		<link rel="stylesheet" href="{% static "male_fashion/css/bootstrap.min.css" %} " type="text/css">
+		<link rel="stylesheet" href="{% static "male_fashion/css/font-awesome.min.css"%}" type="text/css">
+		<link rel="stylesheet" href="{% static "male_fashion/css/elegant-icons.css"%}" type="text/css">
+		<link rel="stylesheet" href="{% static "male_fashion/css/magnific-popup.css"%}" type="text/css">
+		<link rel="stylesheet" href="{% static "male_fashion/css/nice-select.css"%}" type="text/css">
+		<link rel="stylesheet" href="{% static "male_fashion/css/owl.carousel.min.css"%}" type="text/css">
+		<link rel="stylesheet" href="{% static "male_fashion/css/slicknav.min.css"%}" type="text/css">
+		<link rel="stylesheet" href="{% static "male_fashion/css/style.css"%}" type="text/css">
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static "male_fashion/css/login.css"%}">
+	</head>
+
+	<body>
+
+		<div class="wrapper" style="background-image: url('{% static "male_fashion/img/bg-registration-form-1.jpg"%}');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="{% static "male_fashion/img/registration-form-1.jpg"%}" alt="">
+				</div>
+				<form action="" method="POST">
+					{% csrf_token %}
+					<div class="header__logo text-center">
+                        <a href="{% url "home-page" %}"><img src="{% static "male_fashion/img/logo.png"%}" alt=""></a>
+                    </div>
+					<h3>Login Form</h3>
+					{% if messages %}
+					<div class="form-wrapper">
+						<ul class="messages">
+							{% for message in messages %}
+							<li class="{{ message.tags }}">{{ message }}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					{% endif %}
+					<div class="form-wrapper">
+						{{form.email}}
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					<div class="form-wrapper">
+						{{form.password}}
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<button>Login
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					<small>You dont have an account? <a href="{% url "signup-page" %}"><b>Create An Account</b></a></small>
+				</form>
+			</div>
+		</div>
+	<!-- Js Plugins -->
+    <script src="{% static "male_fashion/js/jquery-3.3.1.min.js"%}"></script>
+    <script src="{% static "male_fashion/js/bootstrap.min.js"%}"></script>
+    <script src="{% static "male_fashion/js/jquery.nice-select.min.js"%}"></script>
+    <script src="{% static "male_fashion/js/jquery.nicescroll.min.js"%}"></script>
+    <script src="{% static "male_fashion/js/jquery.magnific-popup.min.js"%}"></script>
+    <script src="{% static "male_fashion/js/jquery.countdown.min.js"%}"></script>
+    <script src="{% static "male_fashion/js/jquery.slicknav.js"%}"></script>
+    <script src="{% static "male_fashion/js/mixitup.min.js"%}"></script>
+    <script src="{% static "male_fashion/js/owl.carousel.min.js"%}"></script>
+    <script src="{% static "male_fashion/js/main.js"%}"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
